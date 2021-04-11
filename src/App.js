@@ -8,9 +8,20 @@ const sighInWithGoogle = () =>
   auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
 
 const SignIn = () => (
-  <main>
-    <button onClick={sighInWithGoogle}>Sign In With Google</button>
-  </main>
+  <body>
+    <nav className="App-header"> TODO APP </nav>
+    <main>
+      <button className="button-sign" onClick={sighInWithGoogle}>
+        Sign In With Google
+      </button>
+    </main>
+    <footer className="footer">
+      <div className="footer-div">
+        Made With 🤍
+        <a href="https://www.instagram.com/ig_deadviz/">Kuldeep Gupta</a>
+      </div>
+    </footer>
+  </body>
 );
 
 const App = () => {
