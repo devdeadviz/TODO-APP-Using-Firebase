@@ -10,7 +10,7 @@ const sighInWithGoogle = () =>
   auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
 
 const SignIn = () => {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(""); // eslint-disable-next-line
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -42,6 +42,8 @@ const SignIn = () => {
           case "auth/wrong-password":
             setPasswordError(err.message);
             break;
+          default:
+            console.log("");
         }
       });
   };
@@ -60,6 +62,8 @@ const SignIn = () => {
           case "auth/weak-password":
             setPasswordError(err.message);
             break;
+          default:
+            console.log("");
         }
       });
   };
@@ -76,7 +80,7 @@ const SignIn = () => {
   };
 
   useEffect(() => {
-    authListener();
+    authListener(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -93,6 +97,7 @@ const SignIn = () => {
         emailError={emailError}
         passwordError={passwordError}
         sighInWithGoogle={sighInWithGoogle}
+        user={user}
       />
     </div>
   );
