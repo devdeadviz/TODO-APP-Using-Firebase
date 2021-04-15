@@ -23,11 +23,12 @@ const Todos = () => {
 
   return (
     <>
-      <header>
+      <section className="hero">
+        <nav>
+          <h2>Welcome</h2>
         <button onClick={signOut}>Sign Out</button>
-      </header>
+        </nav>
       <div className="heading">TODO APP</div>
-      <main>
         <form onSubmit={onSubmitTodo}>
           <input
             required
@@ -38,7 +39,7 @@ const Todos = () => {
           <button type="submit" className="button-add">Add</button>
         </form>
         {todos && todos.map((todo) => <Todo key={todo.id} {...todo} />)}
-      </main>
+        </section>
     </>
   );
 };
@@ -59,7 +60,7 @@ const Todo = ({ id, complete, text }) => {
       >
         {text}
       </button>
-      <button onClick={() => onDeleteTodo(id)}>x</button>
+      <button className="btn-delete" onClick={() => onDeleteTodo(id)}>x</button>
     </div>
   );
 };
